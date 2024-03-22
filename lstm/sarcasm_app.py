@@ -9,8 +9,13 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Load the saved Keras model
-keras_model_path = "lstm/keras_model.h5"
-loaded_model = tf.keras.models.load_model(keras_model_path)
+#load json file 
+json_file= open ("lstm/model.json","r")
+loaded_model_json=json_file.read()
+json_file.close()
+loaded_model=model_from_json(laoded_model_json)
+#load weights of model
+loaded_model.load_weights("lstm/model_weights.h5")
 
 #loaded_model=torch.load("Sarcasm-Detection-Tensorflow/lstm/model.pt")
 
