@@ -28,7 +28,11 @@ loaded_model_json=json_file.read()
 json_file.close()
 #loaded_model=model_from_json(loaded_model_json)
 
-loaded_model = Sequential.from_config(json.loads(loaded_model_json), custom_objects=custom_layers)
+loaded_model=Sequential()
+
+for layer_config in json.loads(loaded_model_json)['config']['layers']:
+    layer=keras.layers.deserialize(layer_config,custom_objects=custom_layers)
+    loaded_model.add(layer)
 
 #load weights of model
 loaded_model.load_weights("lstm/model_weights.h5")
