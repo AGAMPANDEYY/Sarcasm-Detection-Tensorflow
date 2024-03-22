@@ -10,6 +10,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import model_from_json
 from keras.layers import InputLayer, Embedding, SpatialDropout1D, LSTM
 from keras.models import Sequential
+import json
 
 # Define custom layers
 custom_layers = {
