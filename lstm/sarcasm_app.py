@@ -30,6 +30,16 @@ json_file.close()
 
 loaded_model=Sequential()
 
+class CustomSpatialDropout1D(SpatialDropout1D):
+    @classmethod
+    def from_config(cls, config):
+        # Remove the 'trainable' argument if present
+        config.pop('trainable', None)
+        return super().from_config(config)
+
+# Register custom layer
+custom_layers['CustomSpatialDropout1D'] = CustomSpatialDropout1D
+
 for layer_config in json.loads(loaded_model_json)['config']['layers']:
     layer=keras.layers.deserialize(layer_config,custom_objects=custom_layers)
     loaded_model.add(layer)
