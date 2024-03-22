@@ -7,13 +7,29 @@ import tensorflow as tf
 import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import model_from_json
+from keras.layers import InputLayer, Embedding, SpatialDropout1D, LSTM
+from keras.models import Sequential
+import json
+
+# Define custom layers
+custom_layers = {
+    'InputLayer': InputLayer,
+    'Embedding': Embedding,
+    'SpatialDropout1D': SpatialDropout1D,
+    'LSTM': LSTM
+}
+
 
 # Load the saved Keras model
 #load json file 
 json_file= open ("lstm/model.json","r")
 loaded_model_json=json_file.read()
 json_file.close()
-loaded_model=model_from_json(laoded_model_json)
+#loaded_model=model_from_json(loaded_model_json)
+
+loaded_model = Sequential.from_config(json.loads(loaded_model_json), custom_objects=custom_layers)
+
 #load weights of model
 loaded_model.load_weights("lstm/model_weights.h5")
 
