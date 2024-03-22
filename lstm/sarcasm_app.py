@@ -13,7 +13,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 json_file= open ("lstm/model.json","r")
 loaded_model_json=json_file.read()
 json_file.close()
-loaded_model=model_from_json(laoded_model_json)
+loaded_model=model_from_json(loaded_model_json)
 #load weights of model
 loaded_model.load_weights("lstm/model_weights.h5")
 
