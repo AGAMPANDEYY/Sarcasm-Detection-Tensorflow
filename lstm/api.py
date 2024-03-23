@@ -9,6 +9,11 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 app= Flask(__name__)
 @app.route("/predict",methods=['POST'])
 
+max_features = 2500
+tokenizer = Tokenizer(num_words=max_features, split=' ')
+#tokenizer.fit_on_texts(df['headline'].values)
+
+
 def predict():
   if model:
     try:
