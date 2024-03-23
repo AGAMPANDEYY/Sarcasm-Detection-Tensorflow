@@ -1,4 +1,5 @@
 from flask import Flask,request,jsonify
+import torch
 
 app= Flask(__name__)
 @app.route("/predict",methods=['POST'])
