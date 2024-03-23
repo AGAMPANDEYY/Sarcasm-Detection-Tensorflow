@@ -12,42 +12,9 @@ from keras.layers import InputLayer, Embedding, SpatialDropout1D, LSTM
 from keras.models import Sequential
 import json
 
-# Define custom layers
-custom_layers = {
-    'InputLayer': InputLayer,
-    'Embedding': Embedding,
-    'SpatialDropout1D': SpatialDropout1D,
-    'LSTM': LSTM
-}
 
 
-# Load the saved Keras model
-#load json file 
-json_file= open ("lstm/model.json","r")
-loaded_model_json=json_file.read()
-json_file.close()
-#loaded_model=model_from_json(loaded_model_json)
-
-loaded_model=Sequential()
-
-class CustomSpatialDropout1D(SpatialDropout1D):
-    @classmethod
-    def from_config(cls, config):
-        # Remove the 'trainable' argument if present
-        config.pop('trainable', None)
-        return super().from_config(config)
-
-# Register custom layer
-custom_layers['CustomSpatialDropout1D'] = CustomSpatialDropout1D
-
-for layer_config in json.loads(loaded_model_json)['config']['layers']:
-    layer=keras.layers.deserialize(layer_config,custom_objects=custom_layers)
-    loaded_model.add(layer)
-
-#load weights of model
-loaded_model.load_weights("lstm/model_weights.h5")
-
-#loaded_model=torch.load("Sarcasm-Detection-Tensorflow/lstm/model.pt")
+loaded_model=torch.load("lstm/model_lstm_e1.pt")
 
 # Load data
 df1 = pd.read_json('Sarcasm-Detection-Tensorflow/Dataset/Sarcasm_Headlines_Dataset.json', lines=True)
