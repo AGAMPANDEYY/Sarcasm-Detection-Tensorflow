@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import torch
-import keras
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 import torch.nn as nn
