@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
-#import torch
+import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer,BitsAndBytesConfig
 import transformers
 from peft import *
