@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1RWSzQso-1qDLSd5MFkS0wgcg2xx1vdic
 """
 
-!git clone https://github.com/GITushar23/Sarcasm-Detection-Tensorflow.git
-
 import streamlit as st
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer,BitsAndBytesConfig
@@ -21,7 +19,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-st.sidebar.image("dsg.png")
+st.sidebar.image("dsg_logo.pn")
 # Customize the theme
 custom_theme = """
     [theme]
