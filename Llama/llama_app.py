@@ -25,6 +25,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 st.sidebar.image("dsg_logo.pn")
+st.sidebar.title("Data Science Group,IITR Sarcasm Detection Project")
 # Customize the theme
 custom_theme = """
     [theme]
