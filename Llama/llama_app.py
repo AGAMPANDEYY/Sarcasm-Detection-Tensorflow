@@ -53,7 +53,7 @@ generation_config.num_return_sequences = 1
 generation_config.pad_token_id = tokenizer.eos_token_id
 generation_config_eod_token_id = tokenizer.eos_token_id
 
-def predict(input_text,max_length):
+def predict([input_text],max_length):
    prompt = f"""
    <human>: {input_text}
    <assistant>:
@@ -76,7 +76,7 @@ input_text = st.text_input("Enter your text here:", placeholder="Type your text 
 predict_button = st.button("Predict")
 
 if predict_button:
-            prediction = predict([input_text], max_length=50)
+        prediction = predict([input_text], max_length=50)
 
         if prediction == 1:
             st.write("Prediction: 😏 Sarcastic!")
