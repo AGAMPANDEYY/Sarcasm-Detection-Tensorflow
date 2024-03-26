@@ -15,7 +15,7 @@ from peft import *
 import os
 
 
-access_token="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"
+access_token="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"
 
 os.environ["HUGGINGFACE_TOKEN"] = access_token
 
