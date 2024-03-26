@@ -77,11 +77,12 @@ predict_button = st.button("Predict")
 
 if predict_button:
         prediction = predict(input_text, max_length=100)
+        st.write("Prediction:", prediction)
 
-        if prediction == 1:
-            st.write("Prediction: 😏 Sarcastic!")
-        else:
-            st.write("Prediction: 😊 Not Sarcastic")
+        #if prediction == 1:
+            #st.write("Prediction: 😏 Sarcastic!")
+        #else:
+            #st.write("Prediction: 😊 Not Sarcastic")
 
 # Frontend improvements
 st.write("""
