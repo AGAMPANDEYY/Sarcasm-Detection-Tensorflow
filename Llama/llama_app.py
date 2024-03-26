@@ -12,6 +12,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer,BitsAndBytesConfig
 import transformers
 from peft import *
+import os
 
 
 HUGGINGFACE_TOKEN="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"
