@@ -13,6 +13,11 @@ from transformers import AutoModelForCausalLM, AutoTokenizer,BitsAndBytesConfig
 import transformers
 from peft import *
 
+
+HUGGINGFACE_TOKEN="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"
+
+os.environ["HUGGINGFACE_TOKEN"] = access_token
+
 st.set_page_config(
     page_title="Sarcasm Detection App",
     page_icon="😏",
