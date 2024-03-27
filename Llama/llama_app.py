@@ -46,7 +46,12 @@ model_id="AgamP/llama-sarcasm"
 
 access_token="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"
 
-os.environ["HUGGINGFACE_TOKEN"] ="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"
+
+
+
+# Adding access_token to environment from streamlit secrets .toml file
+
+os.environ["HUGGINGFACE_TOKEN"] == st.secrets['access_token']
 
 model=AutoModelForCausalLM.from_pretrained(
     model_id,
