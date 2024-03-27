@@ -1,6 +1,4 @@
-peft
 transformers
-bitsandbytes
 torch
 streamlit
 replicate
