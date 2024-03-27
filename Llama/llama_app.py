@@ -13,9 +13,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 import transformers
 #from peft import *
 import os
+import replicate
 
-
-
+replicate_api="r8_2cpBOE6eWfTlZVwpdraYIWbBMJoSZ643mHoQi"
+os.environ['REPLICATE_API_TOKEN']=replicate_api
 
 st.set_page_config(
     page_title="Sarcasm Detection App",
