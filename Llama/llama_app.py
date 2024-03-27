@@ -15,9 +15,7 @@ from peft import *
 import os
 
 
-access_token="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"
 
-os.environ["HUGGINGFACE_TOKEN"] = access_token
 
 st.set_page_config(
     page_title="Sarcasm Detection App",
@@ -45,6 +43,10 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #loading the model
 
 model_id="AgamP/llama-sarcasm"
+
+access_token="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"
+
+os.environ["HUGGINGFACE_TOKEN"] ="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"
 
 model=AutoModelForCausalLM.from_pretrained(
     model_id,
