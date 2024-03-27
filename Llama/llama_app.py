@@ -15,9 +15,9 @@ from peft import *
 import os
 
 
-access_token="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"
+#access_token="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"
 
-os.environ["HUGGINGFACE_TOKEN"] = access_token
+#os.environ["HUGGINGFACE_TOKEN"] = access_token
 
 st.set_page_config(
     page_title="Sarcasm Detection App",
