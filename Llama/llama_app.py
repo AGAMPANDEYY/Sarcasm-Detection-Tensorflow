@@ -9,9 +9,9 @@ Original file is located at
 
 import streamlit as st
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer,BitsAndBytesConfig, AutoModel
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 import transformers
-from peft import *
+#from peft import *
 import os
 
 
@@ -45,9 +45,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_id="AgamP/llama-sarcasm"
 
 access_token="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"
-
-
-
 
 # Adding access_token to environment from streamlit secrets .toml file
 
