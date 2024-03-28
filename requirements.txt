@@ -3,3 +3,5 @@ transformers==4.38.2
 bitsandbytes
 torch
 streamlit
+accelerate
+replicate
