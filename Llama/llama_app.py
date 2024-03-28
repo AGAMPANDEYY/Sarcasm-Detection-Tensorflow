@@ -49,7 +49,7 @@ access_token="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"
 
 # Adding access_token to environment from streamlit secrets .toml file
 
-os.environ["HUGGINGFACE_TOKEN"] = st.secrets['access_token']
+os.environ["HUGGINGFACE_TOKEN"] = access_token
 
 model=AutoModel.from_pretrained(
     model_id,
