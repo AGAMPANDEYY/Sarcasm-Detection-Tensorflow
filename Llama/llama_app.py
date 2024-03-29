@@ -51,6 +51,8 @@ access_token="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"
 
 os.environ["HUGGINGFACE_TOKEN"] = access_token
 
+config = AutoConfig.from_pretrained("AgamP/llama-sarcasm")
+
 model=AutoModel.from_pretrained(
     model_id,
     ).to(device)
