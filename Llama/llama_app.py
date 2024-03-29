@@ -47,15 +47,18 @@ model_id="AgamP/llama-sarcasm"
 
 access_token="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"
 
+from huggingface_hub import login
+login(token=access_token)
+
 # Adding access_token to environment from streamlit secrets .toml file
 
 os.environ["HUGGINGFACE_TOKEN"] = access_token
 
-config = AutoConfig.from_pretrained("AgamP/llama-sarcasm")
+config = AutoConfig.from_pretrained("AgamP/llama-sarcasm",token=access_token)
 
 model=AutoModel.from_pretrained(
     model_id,
-    ).to(device)
+   token=access_token ).to(device)
 
 tokenizer=AutoTokenizer.from_pretrained(model_id)
 
