@@ -9,7 +9,7 @@ Original file is located at
 
 import streamlit as st
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel, AutoConfig
 import transformers
 #from peft import *
 import os
