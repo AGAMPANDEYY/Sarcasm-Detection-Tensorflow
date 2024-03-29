@@ -54,7 +54,7 @@ login(token=access_token)
 
 os.environ["HUGGINGFACE_TOKEN"] = access_token
 
-config = AutoConfig.from_pretrained("AgamP/llama-sarcasm",token=access_token)
+#config = AutoConfig.from_pretrained("AgamP/llama-sarcasm",token=access_token)
 
 model=AutoModel.from_pretrained(
     model_id,
