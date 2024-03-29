@@ -1,6 +1,0 @@
-accelerate
-transformers
-torch
-streamlit
-replicate
-bitsandbytes
